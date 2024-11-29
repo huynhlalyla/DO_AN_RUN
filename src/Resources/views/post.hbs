@@ -1,0 +1,35 @@
+<div class="wp-containers">
+    <div class="containers">
+        <h1>Đăng Bài</h1>
+        <form
+          method="POST"
+          action="/post/upload"
+          enctype="multipart/form-data"
+        >
+            <h3>Tiêu đề</h3>
+            <input type="text" name="postTitle" required>
+
+            <h3>Nội dung bài đăng</h3>
+            <textarea name="postContent" cols="10" rows="5" required></textarea>
+
+            <h3>Ngành</h3>
+            <select name="industryName" onchange="toggleInputs()" required>
+                <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+                <option value="Hệ thống thông tin">Hệ thống thông tin</option>
+                <option value="Khoa học máy tính">Khoa học máy tính</option>
+                <option value="Kỹ thuật phần mềm">Kỹ thuật phần mềm</option>
+                <option value="Mạng máy tính và truyền thông dữ liệu">Mạng máy tính và truyền thông dữ liệu</option>
+                <option value="Quản trị kinh doanh">Quản trị kinh doanh</option>
+                <option value="Quản trị nhân lực">Quản trị nhân lực</option>
+                <option value="Quản trị sản xuất">Quản trị sản xuất</option>
+            </select>
+
+  
+
+            <h3>Tài liệu/Nếu có</h3>
+            <input type="file" name="file">
+
+            <button class="btn-post" type="submit">Đăng</button>
+        </form>
+    </div>
+</div>

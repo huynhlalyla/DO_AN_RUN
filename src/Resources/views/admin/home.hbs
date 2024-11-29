@@ -1,0 +1,78 @@
+<div class="header">
+    <a href="/" id="logo">
+        <img src="../Image/logo.jpg" alt="Image"> <h1>Trang chủ admin</h1>
+    </a>
+    <div class="search-box">
+        <form onsubmit="event.preventDefault();">
+            <input type="text" class="search" id="searchInput" placeholder="Tìm UserID.... " onkeyup="searchUsers()">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        </form>
+    </div>
+</div>
+    {{!-- <a href="" id="toggle-sidebar"><i class="fa-solid fa-bars"></i></a> --}}
+
+
+<div id="sidebar">
+    <ul>
+        <li><a href="/admin/userManage">Quản lý người dùng</a></li>
+        <li><a href="/admin/postManage">Quản lý danh mục</a></li>
+    </ul>
+</div>
+
+<!-- Các người dùng có tương tác cao -->
+<div class="interaction-users">
+    <h2>Các người dùng có tương tác cao</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>TÊN NGƯỜI DÙNG</th>
+                <th>EMAIL</th>
+                <th>SỐ BÀI ĐĂNG</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if users}}  
+                {{#each users}} <!-- Lặp qua mảng người dùng -->
+                    <tr>
+                        <td>{{this.userName}}</td>
+                        <td>{{this.userEmail}}</td>
+                        <td>10.000</td>
+                    </tr>
+                {{/each}}
+            {{else }}
+                    <tr>
+                        <td colspan="3">
+                            <h1 style="color: red;">Hiện chưa có người dùng nào</h1>
+                        </td>
+                    </tr>
+            {{/if}}
+        </tbody>
+    </table>
+</div>
+
+<!-- Các bài đăng mới nhất -->
+<div class="latest-posts">
+    <h2>Các bài đăng mới nhất</h2>
+    <div class="user-grid-home">
+        {{#if posts}}
+            {{#each posts}}
+                <div class="post">
+                    <h3>{{this.postTitle}}</h3>
+                    <p>{{this.postContent}}</p>
+                    <p><a href="/{{this.file}}" target="_blank"> Xem file</a></p>
+                    <p>Ngành: Kỹ thuật phần mềm</p>
+                    <p>Người đăng: <span style="color: red;">
+                        {{this.author}}
+                    </span></p>
+                </div>
+            {{/each}}
+        {{else}}
+            <p>Hiện chưa có bài đăng nào!</p>
+        {{/if}}
+        
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="js/admin.js"></script>

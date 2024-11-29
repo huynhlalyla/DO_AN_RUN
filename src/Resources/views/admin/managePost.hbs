@@ -1,0 +1,117 @@
+<div class="header">
+    <h1>Quản lý bài đăng</h1>
+    <div class="search-box">
+        <form onsubmit="event.preventDefault();">
+            <input type="text" class="search" id="searchInput" placeholder="Tìm UserID.... " onkeyup="searchUsers()">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        </form>
+    </div>
+</div>
+    <table class="post-table">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Tiêu đề</th>
+                <th>Nội dung</th>
+                <th>Ngành</th>
+                <th>File</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="post-list">
+            {{#if posts}}
+                {{#each posts}}
+                    <tr data-id="{{this.id}}">
+                        <td class="user-id">{{this.author}}</td>
+                        <td class="title">{{this.postTitle}}</td>
+                        <td class="content">{{this.postContent}}</td>
+                        <td class="additional-info">{{this.industryName}}</td>
+                        <td><a href="/{{this.file}}" target="_blank">Xem file</a></td>
+                        <td>
+                            <button class="edit-post">Sửa</button>
+                            <button data-delete="{{this._id}}" class="delete-post">Xóa</button>
+                        </td>
+                    <tr>
+                {{/each}}
+            {{else}}
+                <tr>
+                    <td colspan="7">Không có bài đăng nào.</td>
+                </tr>
+            {{/if}}
+        </tbody>
+    </table>    
+
+        <!-- Edit Post Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Chỉnh sửa bài đăng</h2>
+            <form id="edit-form">
+                <label for="edit-title">Tiêu đề:</label>
+                <input type="text" id="edit-title" name="title" required>
+                <label for="edit-content">Nội dung:</label>
+                <textarea id="edit-content" name="content" rows="3" required></textarea>
+                <label for="edit-category">Phân loại:</label>
+                <select id="edit-category" name="category" required>
+                    <option value="Môn đại cương">Môn đại cương</option>
+                    <option value="Môn chuyên ngành">Môn chuyên ngành</option>
+                </select>
+                
+                <!-- Input for Tên môn (Subject Name) -->
+                <label for="edit-subject">Tên môn:</label>
+                <input type="text" id="edit-subject" name="subject" required>
+
+                <!-- Additional inputs for "Môn chuyên ngành" -->
+                <div id="special-info" style="display:none;">
+                    <label for="edit-major">Ngành:</label>
+                    <input type="text" id="edit-major" name="major" required>
+                </div>
+                <div class="btn-post">
+                    <button type="submit">Lưu</button>
+                    <button type="button" id="cancel-edit">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal for Save -->
+    <div id="confirmSaveModal" class="modal">
+        <div class="modal-content-edit">
+            <p>Bạn có muốn lưu các thay đổi?</p>
+            <div class="modal-buttons">
+                <button id="confirm-save">Lưu</button>
+                <button id="cancel-save">Hủy</button>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Confirmation Modal for Cancel -->
+    <div id="confirmCancelModal" class="modal">
+        <div class="modal-content-edit">
+            <p>Bạn có chắc chắn muốn hủy các thay đổi?</p>
+            <div class="modal-buttons">
+                <button id="confirm-cancel">Hủy thay đổi</button>
+                <button id="cancel-cancel">Quay lại</button>
+            </div>
+        </div>
+    </div>   
+
+{{!-- form xóa dữ liệu --}}
+<form id="form-delete" action="/admin/postManage/" method="post"></form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    {{!-- <script src="/js/admin.js"></script> --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.delete-post');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('delete');
+                    const postId = button.getAttribute('data-delete');
+                    const formDelete = document.querySelector('#form-delete');
+                    formDelete.action = `/admin/postManage/${postId}?_method=DELETE`;
+                    formDelete.submit();
+                });
+            });
+        });
+    </script>

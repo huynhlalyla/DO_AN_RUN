@@ -1,0 +1,69 @@
+<div id="overlay"></div>
+<div id="sidebar" class="hidden">
+    <ul>
+        <li><a href="">Mục 1</a></li>
+        <li><a href="">Mục 2</a></li>
+        <li><a href="">Mục 3</a></li>
+        <li><a href="">Mục 4</a></li>
+    </ul>
+</div>
+
+<div id="wp-content">
+    <a href="/post" class="post-box" id="postBox">
+        <input type="text" placeholder="Chia sẻ tài liệu của bạn!" id="homePostInput" readonly>
+    </a>
+</div>
+
+<!-- bài mẫu -->  
+<div class="content" id="post-container">
+    {{#if posts}}
+        {{#each posts}}
+            <div class="post">
+                <h2 class="post-title">{{this.subjectName}}</h2>
+                <div class="post-options">
+                    <button class="options-button" title="Options">...</button>
+                    <div class="delete-option" style="display: none;">
+                        <button class="delete-button">Xóa</button>
+                    </div>
+                </div>
+                <p class="post-subject">{{this.subjectContent}}</p>
+                <div class="post-media">
+                    <img src="path/to/image.jpg" alt="File hoặc video" />
+                </div>
+                
+                <div class="post-actions">
+                    <button class="comment-button" title="Bình luận">
+                        <i class="fa-solid fa-comment"></i>
+                        <span class="comment-count">0</span> <!-- Hiển thị số lượng bình luận -->
+                    </button>
+                    <button class="share-button" id="shareButton" title="Chia sẻ">
+                        <i class="fa-solid fa-share"></i>
+                    </button>
+                </div>
+                <div class="comments">
+                    <div class="comment-list-container">
+                        <div class="comment-list"></div><!-- khu vực để hiển thị các bình luận -->
+                    </div>
+                    <textarea class="comment-input" placeholder="Nhập bình luận..." rows="1" style="display: none;"></textarea>
+                    <button class="submit-comment" style="display: none;">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>Hiện chưa có bài đăng nào!</p>
+    {{/if}}
+</div>  
+
+<!-- Hiển thị bài đăng -->
+<div class="content" id="post-container"></div>
+
+<!-- Phân trang -->
+<div id="pagination-container">
+    <button id="prev-page" class="page-btn" disabled>Trang trước</button>
+    <div id="pagination"></div>
+    <button id="next-page" class="page-btn">Trang sau</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="/js/home.js"></script>

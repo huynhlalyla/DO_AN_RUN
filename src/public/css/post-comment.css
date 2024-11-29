@@ -1,0 +1,258 @@
+#wp-content {
+    padding-top: 50px;
+}
+
+ 
+.post-box {
+    display: flex;
+    align-items: center;
+    background-color: rgb(228, 227, 227);
+    padding: 10px;
+    margin: 20px auto;
+    width: 480px;
+    border-radius: 10px;
+    box-shadow: var(--main-shadow);
+    cursor: pointer;
+}
+
+#homePostInput {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+ 
+.content {
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+#post-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    background-color: rgb(241, 241, 241);
+    width: 460px;
+    border-radius: 8px;
+    padding: 40px 30px;
+    box-shadow: 0 2px 5px rgb(255, 58, 58);
+    margin-bottom: 70px;
+    min-height: 200px;
+    position: relative;
+}
+
+.post-title, .post-subject, .post-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 2px 0px;
+}
+
+ 
+.post-options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.options-button {
+    font-size: 25px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background: var(--button-color);
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+.options-button:hover{
+    background: var(--button-hover-color);
+}
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-option {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #ffffff;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 20px;
+    display: none;
+}
+.delete-option:hover{
+    background-color: rgb(241, 241, 241) ;
+}
+.post-media img,
+.post-media video {
+    width: 100%;
+    max-height: 250px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.post-actions {
+    padding-top: 13px;
+    display: flex;
+    border-top: 3px solid var(--border-color);
+}
+
+.comment-button {
+    background: none;
+    border: none;
+    color: var(--button-color);
+    cursor: pointer;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+.share-button {
+    background: none;
+    border: none;
+    color: var(--button-color);
+    cursor: pointer;
+    font-size: 24px;
+    transition: color 0.3s;
+    margin-left: auto;
+}
+.comment-button:hover, .share-button:hover {
+    color: var(--button-hover-color);
+}
+
+.comment-button {
+    position: relative;
+}
+
+.comment-count {
+    position: absolute;
+    top: -10px;
+    right: -3px;
+    background-color: #dd5c7c;
+    color: var(--text-color);
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-size: 11px;
+}
+
+ 
+.comments {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input {
+    width: 360px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 20px;
+    max-height: 200px;  
+}
+
+.submit-comment {
+    color: var(--text-color);
+    background: #dd0e30;
+    border: none;
+    border-radius: 4px;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: -38px;
+    margin-right: -5px;
+    align-self: flex-end;
+}
+
+.submit-comment:hover {
+    background-color: var(--button-hover-color);
+    
+}
+
+.comment-list-container {
+    max-height: 400px;
+    padding: 10px 10px;
+    overflow-y: auto;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;  
+    display: none;  
+}
+
+ 
+.comment-list-container.active {
+    border: 2px solid var(--border-color);  
+    display: block;  
+}
+
+.comment-list {
+    display: flex; 
+    flex-direction: column;
+    width: 100%; 
+}
+
+.comment-list p {
+    margin: 8px;
+}
+ 
+.comment-item {
+    position: relative; 
+    margin-bottom: 30px; 
+    background-color: var(--primary-color);
+    padding: 0px 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+
+.comment-actions {
+    position: absolute;
+    right: 10px;
+    margin-top: 2px;
+    display: flex;
+    gap: 5px;
+}
+.edit-comment-input{
+    width: 350px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    min-height: 40px; /* Chiều cao tối thiểu */
+    max-height: 200px; /* Chiều cao tối đa */
+    resize: none;
+}
+.reply-list {
+    margin-left: 20px;  
+    border-left: 2px solid var(--border-color);  
+    padding-left: 10px;  
+}
+.edit-comment,
+.delete-comment,
+.save-comment,
+.cancel-comment 
+ {
+    background-color: transparent;
+    color: rgb(119, 119, 119);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-decoration-line: underline;
+}
+
+.edit-comment:hover,
+.delete-comment:hover,
+.save-comment:hover,
+.cancel-comment:hover {
+    color: #b1001d;
+}

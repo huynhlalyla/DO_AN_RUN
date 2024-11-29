@@ -1,0 +1,267 @@
+.post-table {
+    margin-left: 215px;
+    margin-top: 100px;
+    width: calc(100% - 230px);
+}
+
+
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Cập nhật để phù hợp với kích thước container */
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border: var(--border-color);
+    white-space: pre-line; /* Giữ nguyên các thẻ <br> và xuống dòng */
+}
+td {
+    white-space: nowrap; /* Không cho nội dung xuống dòng */
+    overflow: hidden;    /* Ẩn phần nội dung tràn */
+    text-overflow: ellipsis; /* Hiển thị "..." */
+    max-width: 150px;    /* Giới hạn chiều rộng ô */
+    cursor: pointer;     /* Thay đổi con trỏ khi hover */
+}
+
+td:hover {
+    text-decoration: underline; /* Tạo hiệu ứng khi hover */
+}
+th {
+    background-color:var(--background-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ 
+.edit-post, .delete-post {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-post {
+    background-color: var(--button-edit-bg);
+    color:var(--text-color);
+}
+
+.edit-post:hover {
+    background-color: var(--button-edit-hover-bg);
+}
+
+.delete-post {
+    background-color: var(--button-delete-bg);
+    color: var(--text-color);
+}
+
+.delete-post:hover {
+    background-color: var(--button-delete-hover-bg);
+}
+
+ 
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+ 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.4);
+    padding-top: 120px;
+}
+
+.modal-content, .modal-content-edit {
+    background-color: var(--background-color);
+    margin: auto;
+    padding: 20px 30px;
+    border: var(--border-color);
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.modal-content-edit {
+    width: 60%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+ 
+.close {
+    background-color: var(--background-color);
+    padding: 0px 10px;
+    color: #d3d3d3;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color:var(--text-color);
+    background-color: red;
+}
+
+ 
+#edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-form label {
+    margin-top: 10px;
+    padding: 0px 5px;
+    font-weight: bold;
+}
+
+#edit-form input, #edit-form select, #edit-form textarea {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    border: var(--border-color);
+    width: 100%;
+}
+
+#edit-form select {
+    width: 50%;
+}
+
+#edit-form textarea {
+    resize: vertical;
+    min-height: 20px;
+    max-height: 100px;
+}
+
+.btn-post {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#edit-form button, #confirm-save, #confirm-cancel, #cancel-save, #cancel-cancel {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#edit-form button, #confirm-save, #confirm-cancel {
+    background-color: var(--button-edit-bg);
+    color: var(--text-color);
+}
+
+#edit-form button:hover, #confirm-save:hover, #confirm-cancel:hover {
+    background-color: var(--button-edit-hover-bg);
+}
+
+#cancel-save, #cancel-cancel {
+    background-color: var(--button-delete-bg);
+    color: var(--text-color);
+}
+
+#cancel-save:hover, #cancel-cancel:hover {
+    background-color: var(--button-delete-hover-bg);
+}
+
+ 
+#special-info {
+    margin-top: 7px;
+    display: none;
+}
+
+#cancel-edit {
+    background-color: var(--button-delete-bg);
+}
+
+#cancel-edit:hover {
+    background-color: var(--button-delete-hover-bg);
+}
+
+.modal-view {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content-view {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.modal-content-view .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#fullContent {
+    white-space: pre-wrap; /* Cho phép giữ nguyên dòng và xuống dòng */
+}
+
+.hidden {
+    display: none; /* Ẩn nội dung khi không cần thiết */
+}
+
+.wp-containers {
+    padding: 20px; /* Tạo khoảng cách giữa nội dung form và viền */
+}
+
+.containers h3 {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.containers input, .containers select, .containers textarea {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: var(--border-color);
+    width: 100%;
+    box-sizing: border-box; /* Đảm bảo kích thước không vượt khung */
+}
+
+.containers select {
+    cursor: pointer;
+}

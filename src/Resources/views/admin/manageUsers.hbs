@@ -1,0 +1,27 @@
+<div class="header">
+    <h1>Quản lý người dùng</h1>
+    <div class="search-box">
+        <form onsubmit="event.preventDefault();">
+            <input type="text" class="search" id="searchInput" placeholder="Tìm ID hoặc UserName... " onkeyup="searchUsers()">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        </form>
+    </div>
+</div>
+    <div class="no-results" style="display:none;">Không có kết quả phù hợp.</div>
+    <div class="user-grid">
+        {{#each users}}
+            <div class="user-item">
+                <p title="{{this._id}}">UserID: <span class="user-id">{{this._id}}</span></p>
+                <p title="{{this.userName}}">UserName: <span class="username">{{this.userName}}</span></p>
+                <p>Trạng thái: <span 
+                class="{{#if (eq this.status 'active')}} active {{else}} locked {{/if}}">
+                {{this.status}}
+                </span></p>
+                <button class="{{#if (eq this.status 'active')}} active-btn {{else}} locked-btn {{/if}}" onclick="toggleUserStatus(this)">
+                    {{#if (eq this.status 'active')}} Khoá tài khoản {{else}} Mở khoá tài khoản {{/if}}
+                </button>
+            </div>
+        {{/each}}
+    </div>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="/js/admin.js"></script>

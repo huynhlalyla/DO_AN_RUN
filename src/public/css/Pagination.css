@@ -1,0 +1,26 @@
+#pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagination {
+    text-align: center;
+    padding: 2px;
+}
+
+.page-btn {
+    padding: 10px 15px;
+    border: 2px solid var(--border-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.page-btn:hover {
+    background-color: #ddd;
+}
+
+.page-btn:disabled {
+    background-color: #b9b9b9;
+    cursor: not-allowed;
+}

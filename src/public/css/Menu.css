@@ -1,0 +1,237 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Cho phép menu chính chiếm không gian còn lại */
+}
+
+#main-menu li {
+    margin-right: 20px;
+}
+
+#main-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#main-menu #logo {
+    margin-right: auto; /* Đẩy logo và mục "Trang chủ" sang bên trái */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    flex-grow: 2; /* Cho phép hộp tìm kiếm chiếm nhiều không gian hơn */
+}
+
+.search-box form {
+    margin-right: 10px;
+    flex-grow: 1; /* Cho phép form tìm kiếm chiếm toàn bộ không gian của search-box */
+}
+
+.search-box input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* Đảm bảo input chiếm toàn bộ chiều rộng của form */
+}
+
+#header {
+    background-color: var(--bg-color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;  
+}
+#header {
+    background-color: #121213;
+    padding: 10px 0;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-menu li {
+    margin-right: 20px;
+}
+
+#main-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#main-menu #logo {
+    margin-right: auto; /* Đẩy logo và mục "Trang chủ" sang bên trái */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box form {
+    margin-right: 10px;
+}
+
+.search-box input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#logo {
+    flex-shrink: 0;  
+    margin-right: 20px;  
+}
+
+#logo img {
+    max-width: 50px;  
+    height: auto;
+    transition: max-width 0.3s ease-in-out;  
+}
+
+#main-menu {
+    display: flex;
+    list-style: none;
+    white-space: nowrap;
+    gap: 20px;  
+    flex-grow: 1;  
+    justify-content: space-between;  
+    align-items: center;  
+}
+
+#main-menu li {
+    position: relative;
+}
+
+#main-menu li a {
+    color: var(--text-color);
+    display: block;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+#main-menu ul.sub-menu {
+    position: absolute;
+    background-color: var(--bg-color);
+    padding: 15px 0;
+    list-style: none;
+    width: 200px;
+    border: 1px solid var(--border-color);
+    display: none;
+}
+
+#main-menu li:hover > ul.sub-menu {
+    display: block;
+}
+
+#main-menu ul.sub-menu a {
+    padding: 8px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#main-menu ul.sub-menu li:hover > a {
+    border-bottom: 1px solid var(--hover-border-color);
+}
+
+#main-menu ul.sub-menu li:last-child a {
+    border: none;
+}
+
+#main-menu ul.sub-menu ul.sub-menu {
+    left: 200px;
+    top: -16px;
+}
+
+#main-menu > li > a {
+    position: relative;
+}
+
+#main-menu > li > a::before {
+    content: "";
+    height: 4px;
+    width: 0;
+    background: var(--highlight-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#main-menu > li:hover > a::before {
+    width: 100%;
+}
+
+#main-menu > li.has-child::after {
+    font: var(--fa-font-solid);
+    content: '\f107';
+    color: rgb(143, 143, 143);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 18px 0;
+}
+
+#main-menu .sub-menu li:hover > a {
+    color: var(--highlight-color);
+}
+
+#main-menu .sub-menu > li.has-child::after {
+    font: var(--fa-font-solid);
+    content: '\f105';
+    color: rgb(143, 143, 143);
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 10px 0;
+}
+
+#main-menu .sub-menu > li.has-child:hover::after {
+    color: var(--highlight-color);
+}
+
+ 
+.search-box {
+    display: flex;
+    color: var(--text-color);
+    padding: 0px 20px;
+    width: 250px;
+    flex-shrink: 0;  
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box input {
+    height: 35px;
+    border-radius: 3px;
+    padding-right: 50px;
+}
+
+.search-box i {
+    padding-left: 10px;
+}

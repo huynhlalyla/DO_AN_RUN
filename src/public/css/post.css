@@ -1,0 +1,72 @@
+.wp-containers {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background-color: rgb(236, 236, 236);
+    padding: 20px; /* Đảm bảo khoảng cách bên trong hợp lý */
+    margin-top: 80px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(121, 208, 243, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.containers {
+    width: 100%; /* Đảm bảo container chiếm toàn bộ chiều ngang của wp-containers */
+    max-width: 100%; /* Đảm bảo không vượt quá giới hạn wp-containers */
+    padding: 15px; /* Thêm padding để tạo khoảng cách giữa nội dung và viền */
+    box-sizing: border-box; /* Bao gồm padding trong tính toán chiều rộng */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--title-color, #333);
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%; /* Đảm bảo form bên trong chiếm hết chiều ngang của containers */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa các phần tử trong form */
+}
+
+input[type="text"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid var(--input-border-color, #ccc);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-post {
+    margin-top: 20px;
+    background: var(--button-color, #007BFF);
+    color: var(--text-color, #FFF);
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-post:hover {
+    background: var(--button-hover-color, #0056b3);
+}

@@ -1,0 +1,56 @@
+<div class="wrapper">
+        <div class="form-wrapper sign-in">
+            <form action="/auth/login" method="POST">
+                <h2> Đăng nhập </h2>
+                <div class="input-group">
+                    <input name="userName" type="text" required>
+                    <label for="">Tên người dùng</label>
+                </div>
+                <div class="input-group">
+                    <input name="userPassword" type="text" required>
+                    <label for="">Mật khẩu</label>
+                    <div class="eye">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Ghi nhớ tài khoản</label>
+                </div>
+                <button type="submit">Đăng nhập </button>
+                <div class="signUp-link">
+                    <p>Bạn chưa có tài khoản <a href="#" class="signUpBtn-link"> Đăng ký</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-wrapper sign-up">
+            <form action="/auth/register" method="POST"> 
+                <h2> Đăng ký </h2>
+                <div class="input-group">
+                    <input name="userName" type="text" required>
+                    <label for="">Tên người dùng</label>
+                </div>
+                <div class="input-group">
+                    <input name="userEmail" type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-group">
+                    <input name="userPassword" type="password" required>
+                    <label for="">Mật khẩu</label>
+                    <div class="eye">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Tôi đồng ý với các điều khoản</label>
+                </div>
+                <button type="submit">Đăng ký </button>
+                <div class="signUp-link">
+                    <p>Bạn đã có tài khoản <a href="#" class="signInBtn-link">Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="/js/LAR.js" ></script>

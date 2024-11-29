@@ -1,0 +1,33 @@
+{
+  "name": "do_an_01",
+  "version": "1.0.0",
+  "description": "**ĐỒ ÁN 01**\r 1. thêm dô để test",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haryu2311/website-interface.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haryu2311/website-interface/issues"
+  },
+  "homepage": "https://github.com/Haryu2311/website-interface#readme",
+  "dependencies": {
+    "do_an_01": "file:",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.8.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "express-handlebars": "^8.0.1",
+    "mongodb": "^6.10.0",
+    "nodemon": "^3.1.7"
+  }
+}
